@@ -1,0 +1,272 @@
+:root {
+  --red: #d4341b;
+  --black: #120c0b;
+  --gold: #dbb44b;
+  --light: #e1d4cd;
+  --dark-red: #60221e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--black);
+  color: var(--light);
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("jmf.png") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 12, 11, 0.85);
+}
+
+.nav {
+  position: relative;
+  padding: 20px;
+  z-index: 2;
+  margin: 5px;
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  color: var(--red);
+}
+
+.hero-content p {
+  margin: 10px 0 20px;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--red);
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--dark-red);
+}
+
+/* COUNTDOWN */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+/* SECTIONS */
+.section {
+  padding: 70px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.section h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--gold);
+}
+
+.muted {
+  color: #aaa;
+}
+
+/* WAITLIST */
+.waitlist form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.waitlist input {
+  padding: 12px;
+  width: 250px;
+  border: none;
+  outline: none;
+}
+
+.waitlist button {
+  padding: 12px 25px;
+  border: none;
+  background: var(--red);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer {
+  padding: 30px;
+  text-align: center;
+  background: #0c0807;
+  font-size: 0.9rem;
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(18,12,11,0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 10;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--light);
+  font-weight: 600;
+}
+
+#soundBtn {
+  background: var(--gold);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hero {
+  margin-top: 70px;
+}
+
+textarea {
+  width: 100%;
+  max-width: 400px;
+  height: 100px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.dark {
+  background: #0e0908;
+}
+
+.waitlist-btn{
+    background-color: #d4341b;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.waitlist-btn:hover{
+    background-color: #dbb44b;
+    color:#ffffff;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .countdown {
+    flex-wrap: wrap;
+  }
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--light);
+  transition: 0.3s;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--black);
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    gap: 15px;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  
+  .logo{
+    font-size: 30px;
+  }
+}
+
